@@ -1,0 +1,53 @@
+describe('Login Evolutto', () => {
+    it('Realiza o login no site Evolutto', () => {
+      // Definindo o tamanho da viewport
+      cy.viewport(722, 826);
+  
+      // Navega para a página inicial do Evolutto
+      cy.visit('https://acesso.evolutto.com.br/');
+      cy.url().should('eq', 'https://acesso.evolutto.com.br/');
+      cy.title().should('eq', 'evolutto | Acesse sua Conta');
+  
+      // Clica no campo de usuário e insere o e-mail
+      cy.get('main')
+        .find('aria/Usuário ou e-mail, #username, xpath//*[@id="username"], pierce/#username')
+        .click({ force: true })
+        .type('van.lacerenza@gmail.com');
+  
+      // Insere a senha e realiza o login
+      cy.get('main')
+        .find('aria/Senha, #password, xpath//*[@id="password"], pierce/#password')
+        .type('1234')
+        .click({ force: true });
+  
+      // Verifica se o login foi bem-sucedido
+      cy.url().should('eq', 'https://acesso.evolutto.com.br/web/vendas.php/usuarios_autentica/loginToken?token=tn45fh2veqluh9ag5oupcuue5n&redir=https%3A%2F%2Facesso.evolutto.com.br%2Fadm%2Fconsultores%2Fgestao%2Fdashboard');
+    });
+  });
+  describe('Login Evolutto', () => {
+    it('Realiza o login no site Evolutto', () => {
+      // Definindo o tamanho da viewport
+      cy.viewport(722, 826);
+  
+      // Navega para a página inicial do Evolutto
+      cy.visit('https://acesso.evolutto.com.br/');
+      cy.url().should('eq', 'https://acesso.evolutto.com.br/');
+      cy.title().should('eq', 'evolutto | Acesse sua Conta');
+  
+      // Clica no campo de usuário e insere o e-mail
+      cy.get('main')
+        .find('aria/Usuário ou e-mail, #username, xpath//*[@id="username"], pierce/#username')
+        .click({ force: true })
+        .type('van.lacerenza@gmail.com');
+  
+      // Insere a senha e realiza o login
+      cy.get('main')
+        .find('aria/Senha, #password, xpath//*[@id="password"], pierce/#password')
+        .type('1234')
+        .click({ force: true });
+  
+      // Verifica se o login foi bem-sucedido
+      cy.url().should('eq', 'https://acesso.evolutto.com.br/web/vendas.php/usuarios_autentica/loginToken?token=tn45fh2veqluh9ag5oupcuue5n&redir=https%3A%2F%2Facesso.evolutto.com.br%2Fadm%2Fconsultores%2Fgestao%2Fdashboard');
+    });
+  });
+    
