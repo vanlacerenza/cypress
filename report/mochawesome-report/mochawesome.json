@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-06-11T10:46:41.547Z",
+    "end": "2024-06-11T10:47:01.586Z",
+    "duration": 20039,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4c5e9a32-27fd-4f30-bfe1-b249f4dde337",
+      "title": "",
+      "fullFile": "cypress/e2e/versatilis.cy.js",
+      "file": "cypress/e2e/versatilis.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "37bd3081-2281-41f0-8ef2-905277e1d639",
+          "title": "template spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "passes",
+              "fullTitle": "template spec passes",
+              "timedOut": null,
+              "duration": 16501,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "Cypress.on('uncaught:exception', (err, runnable) => {\n  return false; // Impede que o Cypress falhe o teste em caso de exceções não capturadas\n});\n// Visita a página de login\ncy.visit('https://acesso.evolutto.com.br/');\n// Preenche os campos de login e submete o formulário\ncy.get('[id=\"username\"]').type('van.lacerenza55555555@gmail.com');\ncy.get('[id=\"password\"]').type('Senha@1234');\ncy.get('button[type=\"submit\"]').click();\n// Espera a página carregar completamente\ncy.url().should('include', '/areacliente');\n// Espera até que o elemento esteja disponível e clica na div específica\ncy.get('div.styled__NotImageBox-sc-65cqp3-4.ghpWqo', {\n  timeout: 10000\n}).click({\n  force: true\n});\n// Espera até que a nova página seja carregada completamente\ncy.url().should('include', 'https://acesso.evolutto.com.br/v3/projects/2b2f7720-75d6-4c6b-8a7e-be3b42d889c6');\ncy.wait(2000); // Espera 2 segundos para garantir que a página tenha carregado completamente\n// Clique no botão \"Continuar de onde parei\"\ncy.get('a.container-header__button-status__container__continuar__button').should('be.visible').click();\n// Espera até que a nova página carregue completamente\ncy.url().should('include', '/v3/projects/contents/');\ncy.wait(2000); // Espera 2 segundos para garantir que a página tenha carregado completamente\n// Clicar no elemento específico\ncy.contains('Aprovação da Tarefa (Clique para Solicitar Aprovação/Liberação)').click();\n// Pausa para manter a página aberta\ncy.wait(5000); // Aguarda 5 segundos, ajuste conforme necessário\n// Digitar \"teste\" no campo de texto\ncy.get('textarea.chat--message-input--mention__input').type('teste', {\n  force: true\n});\n// Clicar no botão de envio\ncy.get('div.send-button-bt').click();\n// Agora, para fechar a modal, clique no elemento que representa o ícone de fechar\ncy.get('path[d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"]').click();\n// Tentar clicar no elemento <p>\ncy.contains('Cadastro de Unidades').click({\n  force: true\n});\n// Pausa final para manter a página aberta\ncy.pause();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `div.styled__NotImageBox-sc-65cqp3-4.ghpWqo`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `div.styled__NotImageBox-sc-65cqp3-4.ghpWqo`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/versatilis.cy.js:19:7)",
+                "diff": null
+              },
+              "uuid": "9066baa6-b918-42f0-b360-3c6cd069c21c",
+              "parentUUID": "37bd3081-2281-41f0-8ef2-905277e1d639",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9066baa6-b918-42f0-b360-3c6cd069c21c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 16501,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

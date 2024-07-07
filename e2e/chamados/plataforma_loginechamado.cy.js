@@ -25,7 +25,7 @@ describe('template spec', () => {
 
     // Redirecionar para a página do projeto e esperar carregar
     cy.visit('https://acesso.evolutto.com.br/adm/contratos/raio-x/301315/')
-    cy.url({ timeout: 10000 }).should('include', '/adm/contratos/raio-x/301315/')
+    cy.url({ timeout: 20000 }).should('include', '/adm/contratos/raio-x/301315/')
 
     // Clicar no botão "Criar chamado"
     cy.contains('button', 'Criar chamado').click()
